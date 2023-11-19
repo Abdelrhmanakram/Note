@@ -27,13 +27,7 @@ class ApiAuthController extends Controller
             ], 422); //validation not correct
         }
         $password = bcrypt($request->password);
-        // $access_token = Str::random(64);
-
-        $access_token =JWT::encode([
-            'username' => $request->username,
-            'email' => $request->email,
-        ], 'your_secret_key', 'HS256');
-
+     
         User::create([
             "username" => $request->username,
             "email" => $request->email,
