@@ -32,12 +32,12 @@ class ApiAuthController extends Controller
             "username" => $request->username,
             "email" => $request->email,
             "password" => $password,
-            "access_token" => $access_token
+           
         ]);
 
         return response()->json([
             "success" => "You Registered successfully",
-            "access_token" => $access_token
+            
         ], 200);
     }
 
